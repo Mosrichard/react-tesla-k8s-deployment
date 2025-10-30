@@ -31,6 +31,7 @@ A simple **React Tesla clone** app containerized with **Docker** and deployed on
 ### 1️⃣ Install dependencies
 ```bash
 npm install
+
 2️⃣ Start the app
 bash
 Copy code
@@ -41,6 +42,7 @@ Runs at http://localhost:3000
 bash
 Copy code
 npm run build
+
 🐳 Docker Setup
 Build and push image
 bash
@@ -48,6 +50,7 @@ Copy code
 docker build -t <your-dockerhub-username>/react-tesla-app:latest .
 docker login
 docker push <your-dockerhub-username>/react-tesla-app:latest
+
 ☸️ Deploy on Kubernetes
 Apply manifests
 bash
@@ -66,6 +69,7 @@ If using Minikube → run:
 bash
 Copy code
 minikube service react-tesla-service
+
 📦 Files Included
 css
 Copy code
@@ -73,8 +77,9 @@ Dockerfile
 deployment.yaml
 service.yaml
 configmap.yaml
-
+public/
 src/
+
 ✨ Author
 Mos Richard
 Deployed using Kubernetes and Docker 🚀
