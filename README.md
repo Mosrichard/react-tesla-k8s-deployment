@@ -1,44 +1,80 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+🚗 React Tesla App
 
-## Available Scripts
+A modern Tesla UI built with React, Redux Toolkit, and TailwindCSS.
+Containerized with Docker and deployed using Kubernetes.
 
-In the project directory, you can run:
+🧩 Scripts
+Command	Description
+npm start	Run the app in development mode at http://localhost:3000
 
-### `npm start`
+npm run build	Build the app for production (output in /build)
+npm test	Run tests in watch mode
+npm run eject	Eject CRA config (not reversible)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+# 🚗 React Tesla App — Kubernetes Deployment
 
-### `npm test`
+A simple **React Tesla clone** app containerized with **Docker** and deployed on **Kubernetes** (works with Minikube or AWS EKS).
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 🛠️ Technologies Used
+- React + Redux Toolkit  
+- Docker  
+- Kubernetes (Deployment, Service, ConfigMap)  
+- NGINX  
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## ⚙️ Setup & Run Locally
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 1️⃣ Install dependencies
+```bash
+npm install
+2️⃣ Start the app
+bash
+Copy code
+npm start
+Runs at http://localhost:3000
 
-### `npm run eject`
+3️⃣ Build for production
+bash
+Copy code
+npm run build
+🐳 Docker Setup
+Build and push image
+bash
+Copy code
+docker build -t <your-dockerhub-username>/react-tesla-app:latest .
+docker login
+docker push <your-dockerhub-username>/react-tesla-app:latest
+☸️ Deploy on Kubernetes
+Apply manifests
+bash
+Copy code
+kubectl apply -f configmap.yaml
+kubectl apply -f deployment.yaml
+kubectl apply -f service.yaml
+Verify deployment
+bash
+Copy code
+kubectl get pods
+kubectl get svc
+If using EKS → open LoadBalancer URL
+If using Minikube → run:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+bash
+Copy code
+minikube service react-tesla-service
+📦 Files Included
+css
+Copy code
+Dockerfile
+deployment.yaml
+service.yaml
+configmap.yaml
+build/
+src/
+✨ Author
+Mos Richard
+Deployed using Kubernetes and Docker 🚀
