@@ -73,7 +73,7 @@ Dockerfile
 deployment.yaml
 service.yaml
 configmap.yaml
-build/
+
 src/
 ✨ Author
 Mos Richard
