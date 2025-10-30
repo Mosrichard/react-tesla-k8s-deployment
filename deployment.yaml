@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: react-tesla-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: react-tesla
+  template:
+    metadata:
+      labels:
+        app: react-tesla
+    spec:
+      containers:
+      - name: react-tesla
+        image: mosrichard1234/react-tesla-app:latest
+        ports:
+        - containerPort: 80
+
